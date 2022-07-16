@@ -16,7 +16,7 @@ export const token = {
 axiosApiInstance.interceptors.request.use(
 	function (req) {
 		const localStorageData = localStorage.getItem('persist:user');
-		const persistedToken = JSON.parse(localStorageData).token.slice(1, -1);
+		const persistedToken = JSON.parse(localStorageData).token?.slice(1, -1);
 
 		if (persistedToken) {
 			req.headers.Authorization = persistedToken;

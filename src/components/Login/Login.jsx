@@ -48,7 +48,7 @@ const Login = () => {
 					</Link>
 				</p>
 
-				{errors.length !== 0 && <p className='error'>{errors.join(' ')}</p>}
+				{errors?.length !== 0 && <p className='error'>{errors?.join(' ')}</p>}
 			</LoginStyled>
 		</div>
 	);

@@ -36,6 +36,7 @@ const Registration = () => {
 				dispatch(signUpRequest());
 
 				const response = await registration(newUser);
+				console.log(response);
 
 				if (response.status === 201 && response.data.successful) {
 					navigate('/login', { replace: true });
@@ -58,7 +59,7 @@ const Registration = () => {
 						{constants.LOGIN_PAGE_TITLE}
 					</Link>
 				</p>
-				{errors.length !== 0 && <p className='error'>{errors.join(' ')}</p>}
+				{errors?.length !== 0 && <p className='error'>{errors?.join(' ')}</p>}
 			</RegistrationStyled>
 		</div>
 	);
